@@ -6,7 +6,7 @@ Gli array hanno due limiti principali:
 ❌ Poco flessibili
 
 Esempio:
-    int[] numeri = new int[3];
+<p> int[] numeri = new int[3];</p>
 👉 Non puoi aggiungere nuovi elementi facilmente.
 
 Per questo esistono List e Dictionary, forniti dal namespace:
