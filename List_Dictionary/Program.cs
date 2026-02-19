@@ -43,9 +43,9 @@ namespace List_Dictionary
             //    Console.WriteLine(nome);
             //}
 
-            List<int> numeri = new() { 1, 2, 3, 4, 5 };
+            List<int> numeri = new() { 8, 7, 6, 5, 4, 1, 2, 3 };
             numeri.Remove(3);
-            numeri.Clear(); //Rimuove tutti gli elementi dalla lista (DROP TABLE in SQL Server)
+            //numeri.Clear(); //Rimuove tutti gli elementi dalla lista (DROP TABLE in SQL Server)
 
             // Visualizzare i numeri Con foreach
             Console.WriteLine("Numeri nella lista: (con foreach)");
@@ -54,7 +54,7 @@ namespace List_Dictionary
                 Console.WriteLine(numero);
             }
 
-            numeri.AddRange(new List<int> { 10, 20, 30, 40, 50 }); //Aggiungere più elementi insieme alla lista
+            numeri.AddRange(new List<int> { 9, 621, 87, 69, 10, 22, 50 }); //Aggiungere più elementi insieme alla lista
 
 
             //Controlla se esiste un valore.
@@ -62,15 +62,48 @@ namespace List_Dictionary
             {
                 Console.WriteLine("Presente");
             }
+            Console.WriteLine("==========================================\n");
+
             // Visualizzare i numeri Con for
             Console.WriteLine("Numeri nella lista (con for):");
             for (int i = 0; i < numeri.Count; i++)
             {
                 Console.WriteLine(numeri[i]);
             }
+            Console.WriteLine("==========================================\n");
+
 
 
             // IndexOf(), Sort(), Reverse(), Insert(), RemoveAll(), Find(), FindAll()
+            int posizione = numeri.IndexOf(40); // Trova la posizione di un elemento, se non lo trova restituisce -1
+            Console.WriteLine(posizione);
+            Console.WriteLine("==========================================\n");
+
+            numeri.Sort(); // Ordina la lista in ordine crescente 
+            foreach (int numero in numeri)
+            {
+                Console.WriteLine(numero);
+            }
+
+            Console.WriteLine("==========================================\n");
+            numeri.Reverse(); // Ordina la lista in ordine decrescente
+            foreach (int numero in numeri)
+            {
+                Console.WriteLine(numero);
+            }
+
+            Console.WriteLine("==========================================\n");
+
+            int maggiore = numeri.Find(n => n > 20); //(👉 n => n > 20 si chiama Lambda Expression); Trova il primo elemento che soddisfa la condizione (n > 20)
+            Console.WriteLine(maggiore);
+            Console.WriteLine("==========================================\n");
+
+            var grandi = numeri.FindAll(x => x < 40); // Trova tutti gli elementi che soddisfano la condizione (x < 40) e li restituisce in una nuova lista
+            foreach (int numero in grandi)
+            {
+                Console.WriteLine(numero);
+            }
+            Console.WriteLine("==========================================\n");
         }
     }
 }
