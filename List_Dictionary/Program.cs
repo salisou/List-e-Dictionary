@@ -104,6 +104,37 @@ namespace List_Dictionary
                 Console.WriteLine(numero);
             }
             Console.WriteLine("==========================================\n");
+
+            Console.WriteLine("=====================Metodi Utili per Disctionary<TKey, TValue> =====================\n");
+            Dictionary<string, int> scuola = new();
+            scuola.Add("Luca", 30);
+            scuola.Add("Giorgio", 28);
+            scuola.Add("Giulia", 29);
+
+            scuola["Giorgio"] = 50; // Modifica il valore associato alla chiave "Giorgio"
+
+            foreach (var chiave in scuola.Keys)
+            {
+                Console.WriteLine(chiave);
+            }
+
+            Console.WriteLine("================= Stampa chiave e valore ===================\n");
+            foreach (var kvp in scuola) // kvp sta per KeyValuePair
+            {
+                Console.WriteLine($"Nome stuente: {kvp.Key}, Voto: {kvp.Value}");
+            }
+
+            // Esercizio:1 Stato
+            Console.WriteLine("================= Esercizio:1 ===================\n");
+            Dictionary<string, string> stati = new();
+            stati.Add("Lombardia", "Milano");
+            stati.Add("Lazio", "Roma");
+            stati.Add("Campania", "Napoli");
+            foreach (var kvp in stati)
+            {
+                Console.WriteLine($"Regione: {kvp.Key}, Capoluogo: {kvp.Value}");
+
+            }
         }
     }
 }
